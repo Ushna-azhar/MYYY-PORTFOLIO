@@ -4,7 +4,7 @@ import Image from "next/image";
 import React, { useState } from "react"; 
 import TabButton from './TabButton';
 
-
+// Tab Data: This contains the tab identifiers, labels, and their content
 const TAB_DATA = [
   { id: 'skills', label: 'Skills', content: (
       <div className="text-white">
@@ -50,15 +50,16 @@ const Abouts = () => {
 
   return (
     <section className="text-gray-300 py-8 px-6 sm:py-12 sm:px-10 lg:px-16">
-      <div className="md:grid md:grid-cols-2 gap-10 items-center">
+      <div className="flex flex-col md:grid md:grid-cols-2 gap-10 items-center justify-center"> {/* Flex for smaller, grid for larger screens */}
+        
         {/* Image Section */}
-        <div className="relative mb-8 md:mb-0">
+        <div className="flex justify-center md:justify-start mb-8 md:mb-0"> 
           <Image
             src="/about.jpg" 
             alt="About Me"
             width={500}
             height={500}
-            className="rounded-lg shadow-lg mx-auto md:mx-0"
+            className="rounded-lg shadow-lg object-cover"
           />
         </div>
 
@@ -70,17 +71,18 @@ const Abouts = () => {
           </p>
 
           {/* Tab Buttons */}
-          <div role="tablist" className="flex flex-row mt-8 space-x-4 justify-center md:justify-start">
+          <div role="tablist" className="flex flex-wrap gap-4 justify-center md:justify-start mt-8">
             {TAB_DATA.map((tabItem) => (
               <TabButton
                 key={tabItem.id}
                 selectTab={() => handleTabChange(tabItem.id)}
                 active={tab === tabItem.id}
-                aria-selected={tab === tabItem.id ? 'true' : 'false'}
+                aria-selected={tab === tabItem.id}
                 role="tab"
                 tabIndex={tab === tabItem.id ? 0 : -1} // Makes sure the active tab is focusable
                 aria-controls={tabItem.id} // Links the button with the content
-                id={`tab-${tabItem.id}`} // Unique ID for each tab button
+                id={`tab-${tabItem.id}`} // Correct use of template literals
+                className="px-4 py-2 text-lg font-medium bg-emerald-800 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-emerald-600 transition-all duration-200"
               >
                 {tabItem.label}
               </TabButton>
@@ -96,7 +98,7 @@ const Abouts = () => {
                     key={tabItem.id}
                     className="tab-content"
                     role="tabpanel"
-                    aria-labelledby={`tab-${tabItem.id}`} // Links content with the tab button
+                    aria-labelledby={`tab-${tabItem.id}`} // Correct use of template literals
                     id={tabItem.id}
                   >
                     {tabItem.content}
