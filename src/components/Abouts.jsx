@@ -4,7 +4,7 @@ import Image from "next/image";
 import React, { useState } from "react"; 
 import TabButton from './TabButton';
 
-// Tab Data: This contains the tab identifiers, labels, and their content
+
 const TAB_DATA = [
   { id: 'skills', label: 'Skills', content: (
       <div className="text-white">
@@ -52,31 +52,31 @@ const Abouts = () => {
     <section className="text-gray-300 py-8 px-6 sm:py-12 sm:px-10 lg:px-16">
       <div className="md:grid md:grid-cols-2 gap-10 items-center">
         {/* Image Section */}
-        <div className="relative">
+        <div className="relative mb-8 md:mb-0">
           <Image
             src="/about.jpg" 
             alt="About Me"
             width={500}
             height={500}
-            className="rounded-lg shadow-lg"
+            className="rounded-lg shadow-lg mx-auto md:mx-0"
           />
         </div>
 
         {/* Text Section */}
         <div className="text-center md:text-left">
           <h2 className="text-emerald-800 text-3xl font-semibold mb-4">About Me</h2>
-          <p className="text-green-400 font-mono">
+          <p className="text-green-400 font-mono text-lg md:text-xl mb-6">
             A passionate Web Developer and Graphic Designer. I specialize in creating dynamic, responsive websites and designing visually engaging user interfaces. With a strong foundation in both front-end and back-end development, I bring ideas to life with clean code and creative design. I thrive on solving complex problems and delivering seamless user experiences. Let&apos;s create something amazing together!
           </p>
 
           {/* Tab Buttons */}
-          <div role="tablist" className="flex flex-row mt-8">
+          <div role="tablist" className="flex flex-row mt-8 space-x-4 justify-center md:justify-start">
             {TAB_DATA.map((tabItem) => (
               <TabButton
                 key={tabItem.id}
                 selectTab={() => handleTabChange(tabItem.id)}
                 active={tab === tabItem.id}
-                aria-selected={tab === tabItem.id}
+                aria-selected={tab === tabItem.id ? 'true' : 'false'}
                 role="tab"
                 tabIndex={tab === tabItem.id ? 0 : -1} // Makes sure the active tab is focusable
                 aria-controls={tabItem.id} // Links the button with the content
