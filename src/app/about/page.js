@@ -5,11 +5,13 @@ import Footer from "../../components/Footer";
 export default function AboutPage() {
   return (
     <main className="flex min-h-screen flex-col bg-black">
-      <div className="px-8 py-4 mx-auto">
-        <Abouts /> 
+     
+      <div className="px-8 py-4 mx-auto flex-1">
+        <Abouts />
       </div>
-      <Footer/>
+
+      {/* Footer */}
+      <Footer />
     </main>
   );
 }
-
