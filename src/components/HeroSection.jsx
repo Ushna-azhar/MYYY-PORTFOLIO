@@ -24,7 +24,7 @@ const HeroSection = () => {
         <div className="text-center lg:text-left lg:w-1/2 mb-8 lg:mb-0">
           <h1 className="text-emerald-50 mb-6 text-4xl lg:text-6xl xl:text-7xl font-semibold leading-tight">
             <span className="text-transparent bg-clip-text bg-gradient-to-br">
-              Hello, I'm{' '}
+              Hello, I&apos;m{' '}
             </span>
             <TypeAnimation
               sequence={[
@@ -51,7 +51,7 @@ const HeroSection = () => {
             />
           </h1>
           <p className="text-gray-300 font-mono text-lg lg:text-xl mb-8">
-            Hello! I’m Ushna, a passionate Web Developer and Graphic Designer. With a unique blend of technical expertise and creative flair, I specialize in building dynamic websites and crafting visually compelling user interfaces.
+            Hello! I&apos;m Ushna, a passionate Web Developer and Graphic Designer. With a unique blend of technical expertise and creative flair, I specialize in building dynamic websites and crafting visually compelling user interfaces.
           </p>
 
           <div className="flex gap-4 justify-center lg:justify-start">
@@ -87,5 +87,3 @@ const HeroSection = () => {
 };
 
 export default HeroSection;
-
-
