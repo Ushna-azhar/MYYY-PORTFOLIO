@@ -1,13 +1,11 @@
-// "use client" directive to specify that this is a client-side component
 'use client';
 
 import React, { useEffect, useRef } from 'react';
 
-const Projectcard = ({ videoUrl, title, description, tags, githubUrl }) => {
-  const videoRef = useRef(null); // Create a reference for the video element
+const Projectcard = ({ videoUrl, title, description, tags, githubUrl, webUrl }) => {
+  const videoRef = useRef(null);
 
   useEffect(() => {
-    // Set the playbackRate directly on the video element when it mounts
     if (videoRef.current) {
       videoRef.current.playbackRate = 1.5;
     }
@@ -24,7 +22,7 @@ const Projectcard = ({ videoUrl, title, description, tags, githubUrl }) => {
       {/* Video Preview */}
       <div className="relative" aria-hidden="true">
         <video
-          ref={videoRef} // Attach the ref to the video element
+          ref={videoRef}
           className="w-full h-full object-cover"
           autoPlay
           loop
@@ -49,6 +47,30 @@ const Projectcard = ({ videoUrl, title, description, tags, githubUrl }) => {
               {tag}
             </span>
           ))}
+        </div>
+
+        {/* Buttons */}
+        <div className="flex justify-between items-center mt-6">
+          {webUrl && (
+            <a
+              href={webUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-green-600 hover:bg-green-700 text-white text-sm font-medium py-2 px-4 rounded focus:outline-none focus:ring-2 focus:ring-green-500"
+            >
+              View Website
+            </a>
+          )}
+          {githubUrl && (
+            <a
+              href={githubUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium py-2 px-4 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+            >
+              View GitHub Repo
+            </a>
+          )}
         </div>
       </div>
     </a>
