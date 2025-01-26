@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Image from 'next/image';
 import { TypeAnimation } from 'react-type-animation';
 
 const HeroSection = () => {
@@ -22,7 +23,7 @@ const HeroSection = () => {
           <div className="col-span-1 lg:col-span-7 text-center lg:text-left">
             <h1 className="text-emerald-50 mb-6 text-4xl lg:text-7xl font-semibold leading-tight">
               <span className="text-transparent bg-clip-text bg-gradient-to-br">
-                Hello, I'm{' '}
+                Hello, I&apos;m{' '}
               </span>
               <TypeAnimation
                 sequence={[
@@ -49,13 +50,13 @@ const HeroSection = () => {
               />
             </h1>
             <p className="text-gray-300 font-mono text-lg lg:text-xl mb-8">
-              Hello! I’m Ushna, a passionate Web Developer and UI UX Developer. With a unique blend of technical expertise and creative flair, I specialize in building dynamic websites and crafting visually compelling user interfaces.
+              Hello! I&apos;m Ushna, a passionate Web Developer and UI UX Developer. With a unique blend of technical expertise and creative flair, I specialize in building dynamic websites and crafting visually compelling user interfaces.
             </p>
 
             <div className="flex gap-4 justify-center lg:justify-start">
               <button
                 className="px-8 py-3 bg-emerald-950 text-white rounded-full shadow-md hover:bg-emerald-600 transition-colors duration-300"
-                aria-label="Hire me"
+                aria-label="Click to hire me"
               >
                 Hire Me
               </button>
@@ -64,7 +65,7 @@ const HeroSection = () => {
                 href="/ushnashaikh_cv.pdf"
                 download="ushnashaikh_cv"
                 className="px-8 py-3 bg-transparent border-2 border-emerald-950 text-white rounded-full shadow-md hover:bg-emerald-500 hover:text-white transition-colors duration-300"
-                aria-label="Download CV"
+                aria-label="Download Ushna's CV"
               >
                 Download CV
               </a>
@@ -72,10 +73,12 @@ const HeroSection = () => {
           </div>
 
           <div className="col-span-1 lg:col-span-5 flex justify-center lg:justify-end mt-6 lg:mt-0">
-            <img
+            <Image
               src="/pf.jpg"
               alt="Portrait of Ushna, a Website Developer, Graphic Designer, and Digital Marketer"
-              className="rounded-full border-4 border-white w-60 h-60 object-cover shadow-lg"
+              className="rounded-full border-4 border-white shadow-lg"
+              width={240}
+              height={240}
             />
           </div>
         </div>
